@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-const MY_DOMAIN = 'https://coffeebrothers-7ec5c7fdf171.herokuapp.com';
+const MY_DOMAIN = 'https://coffeebrothers-7ec5c7fdf171.herokuapp.com/';
 
 app.get('/*', (req,res) =>
 res.sendFile(path.join(__dirname, 'dist/coffeebrothersapi', 'index.html')),
@@ -46,4 +46,4 @@ try{
 }
 });
 
-app.listen(process.env.PORT || 4242);
+app.listen(process.env.PORT || 4242, () => console.log('Server is running!'));
