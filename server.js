@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 
 const MY_DOMAIN = 'https://coffeebrothers-7ec5c7fdf171.herokuapp.com';
 
+app.get('/', (req, res) => {
+  res.send('<h1>Coffee Brothers Server!</h1>');
+});
+
 app.post('/create-checkout-session', async (req,res) => {
 try{
   console.log(req.body);
