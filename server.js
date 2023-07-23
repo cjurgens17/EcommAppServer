@@ -36,6 +36,11 @@ try{
     mode: 'payment',
     success_url: `${MY_DOMAIN}/success`,
     cancel_url: `${MY_DOMAIN}/cancel`
+  },
+  {
+    headers: {
+      'Authorization' : `Bearer ${process.env.STRIPE_SECRET_KEY}`
+    }
   });
 
   console.log('Stripe Response:', session);
