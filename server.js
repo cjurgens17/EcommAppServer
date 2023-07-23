@@ -1,5 +1,5 @@
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')('sk_test_51NWLWiAAwBntl43mAAscP0tDxysTzcY6oO8PfCPxpbBmEJVgl9WlJchi0x3pFgycOrtWMW9yCMdoy0jb2Comob3f00Jnz53sLm');
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -36,11 +36,6 @@ try{
     mode: 'payment',
     success_url: `${MY_DOMAIN}/success`,
     cancel_url: `${MY_DOMAIN}/cancel`
-  },
-  {
-    headers: {
-      'Authorization' : `Bearer ${process.env.STRIPE_SECRET_KEY}`
-    }
   });
 
   console.log('Stripe Response:', session);
