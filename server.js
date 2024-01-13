@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-const MY_DOMAIN = 'https://coffeebrothers-7ec5c7fdf171.herokuapp.com';
+const MY_DOMAIN = 'https://ecommerce-app-three-tau.vercel.app';
 
 app.get('/', (req, res) => {
   res.send('<h1>Coffee Brothers Server!</h1>');
